@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: d66595227e9154cdd8e095eda0d9c6a9
+timeCreated: 1508231906
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: 'Dopestyle '
+  fontNames:
+  - 'Dopestyle '
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
