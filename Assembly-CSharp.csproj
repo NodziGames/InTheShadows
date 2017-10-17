@@ -46,8 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\check_pos.cs" />
      <Compile Include="Assets\Scripts\flicker.cs" />
      <Compile Include="Assets\Scripts\rotation_easy.cs" />
+     <Compile Include="Assets\Scripts\rotation_hard.cs" />
      <Compile Include="Assets\Scripts\rotation_medium.cs" />
      <None Include="Assets\Objects\Board\archibase.net.txt" />
      <None Include="Assets\Objects\Pencils\archibase.net.txt" />
