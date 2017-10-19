@@ -46,6 +46,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\LoadManager.cs" />
+     <Compile Include="Assets\Scripts\buttons.cs" />
+     <Compile Include="Assets\Scripts\buttons_level.cs" />
      <Compile Include="Assets\Scripts\check_pos.cs" />
      <Compile Include="Assets\Scripts\flicker.cs" />
      <Compile Include="Assets\Scripts\rotation_easy.cs" />

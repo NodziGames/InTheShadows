@@ -16,7 +16,7 @@ public class rotation_hard : MonoBehaviour {
 
 	void Start () {
 		bool izok = false;
-		while (!izok)
+		while (!izok) //Iz Not Overlepping le pozision?
 		{
 			transform.eulerAngles = new Vector3 (Random.Range(1.0f, 359.0f), Random.Range(1.0f, 359.0f), 0);
 			float offset_x = Mathf.Abs (winning_coords.x - transform.rotation.eulerAngles.x);
@@ -40,7 +40,6 @@ public class rotation_hard : MonoBehaviour {
 			} else {
 				float offset_x = Mathf.Abs(Mathf.DeltaAngle (winning_coords.x, transform.rotation.eulerAngles.x));
 				float offset_y = Mathf.Abs(Mathf.DeltaAngle (winning_coords.y, transform.rotation.eulerAngles.y));
-				float offset_z = Mathf.Abs(Mathf.DeltaAngle (winning_coords.z, transform.rotation.eulerAngles.z));
 				if ((offset_x <= leniency || offset_x >= 180 - leniency) && offset_y <= leniency ) {
 					angle_won = true;
 				}
