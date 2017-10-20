@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rotation_easy : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class rotation_easy : MonoBehaviour {
 
 	private float rotatespeed = 300.0f;
 	private bool won = false;
+	private AudioSource audio;
 
 	void Start () {
 		bool izok = false;
@@ -24,6 +26,7 @@ public class rotation_easy : MonoBehaviour {
 			} else
 				izok = true;
 		}
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -38,7 +41,15 @@ public class rotation_easy : MonoBehaviour {
 				float offset_z = Mathf.Abs (winning_coords.z - transform.rotation.eulerAngles.z);
 				if (offset_x <= leniency && offset_y <= leniency && offset_z <= leniency) {
 					won = true;
-					Debug.Log ("You Win!");
+					Invoke ("GoToMove", 4);
+					audio.Play ();
+					if (PlayerPrefs.GetInt ("Classic") == 0)
+					{
+						PlayerPrefs.SetInt ("lvl_" + SceneManager.GetActiveScene ().name, 2);
+						if (PlayerPrefs.GetInt("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1)) != 2)
+							PlayerPrefs.SetInt ("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1), 1);
+						PlayerPrefs.Save ();
+					}
 				}
 			}
 		} else {
@@ -48,5 +59,10 @@ public class rotation_easy : MonoBehaviour {
 
 			transform.eulerAngles = new Vector3(newx, newy, newz);
 		}
+	}
+
+	void GoToMove()
+	{
+		SceneManager.LoadScene ("Level_Select");
 	}
 }

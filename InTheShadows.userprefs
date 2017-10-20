@@ -1,10 +1,18 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/rotation_hard.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/gay.cs">
     <Files>
-      <File FileName="Assets/Scripts/check_pos.cs" Line="26" Column="56" />
-      <File FileName="Assets/Scripts/rotation_hard.cs" Line="43" Column="103" />
-      <File FileName="Assets/Scripts/rotation_medium.cs" Line="31" Column="65" />
+      <File FileName="Assets/Scripts/level_select.cs" Line="37" Column="21" />
+      <File FileName="Assets/Scripts/buttons.cs" Line="12" Column="20" />
+      <File FileName="Assets/Scripts/rotation_medium.cs" Line="54" Column="46" />
+      <File FileName="Assets/Scripts/rotation_hard.cs" Line="67" Column="44" />
+      <File FileName="Assets/Scripts/rotation_easy.cs" Line="46" Column="46" />
+      <File FileName="Assets/Scripts/button_notext.cs" Line="41" Column="18" />
+      <File FileName="Assets/Scripts/check_pos.cs" Line="31" Column="18" />
+      <File FileName="Assets/Scripts/button_reset.cs" Line="8" Column="32" />
+      <File FileName="Assets/Scripts/camera.cs" Line="19" Column="48" />
+      <File FileName="Assets/Scripts/button_mute.cs" Line="45" Column="39" />
+      <File FileName="Assets/Scripts/gay.cs" Line="19" Column="34" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

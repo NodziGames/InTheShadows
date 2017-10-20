@@ -9,6 +9,7 @@ public class buttons : MonoBehaviour {
 
 	public GameObject text;
 	public string scene;
+	public bool classic;
 
 	private Renderer rend;
 	private Vector3 original_pos;
@@ -49,6 +50,11 @@ public class buttons : MonoBehaviour {
 
 	void NextRoom()
 	{
+		if (classic)
+			PlayerPrefs.SetInt ("Classic", 1);
+		else
+			PlayerPrefs.SetInt ("Classic", 0);
+		PlayerPrefs.Save ();
 		SceneManager.LoadScene (scene);
 	}
 

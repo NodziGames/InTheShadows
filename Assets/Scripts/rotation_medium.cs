@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rotation_medium : MonoBehaviour {
 
 	// Use this for initialization
 	public Vector3 winning_coords;
 	public float leniency;
+	private AudioSource audio;
 
 	private float rotatespeed = 300.0f;
 	private bool won = false;
@@ -23,6 +25,8 @@ public class rotation_medium : MonoBehaviour {
 			} else
 				izok = true;
 		}
+
+		audio = GetComponent<AudioSource> ();
 	}
 
 	// Update is called once per frame
@@ -45,7 +49,15 @@ public class rotation_medium : MonoBehaviour {
 				Debug.Log ("Z: " + offset_z);
 				if ((offset_x <= leniency || offset_x >= 180 - leniency) && offset_y <= leniency ) {
 					won = true;
-					Debug.Log ("You Win!");
+					Invoke ("GoToMove", 4);
+					audio.Play ();
+					if (PlayerPrefs.GetInt ("Classic") == 0)
+					{
+						PlayerPrefs.SetInt ("lvl_" + SceneManager.GetActiveScene ().name, 2);
+						if (PlayerPrefs.GetInt ("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1)) != 2)
+							PlayerPrefs.SetInt ("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1), 1);
+						PlayerPrefs.Save ();
+					}
 				}
 			}
 		} else {
@@ -55,5 +67,10 @@ public class rotation_medium : MonoBehaviour {
 		
 			transform.eulerAngles = new Vector3(newx, newy, newz);
 		}
+	}
+
+	void GoToMove()
+	{
+		SceneManager.LoadScene ("Level_Select");
 	}
 }

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rotation_hard : MonoBehaviour {
 
@@ -13,6 +14,7 @@ public class rotation_hard : MonoBehaviour {
 	public bool angle_won = false;
 	public bool pos_won = false;
 	public int mouse_button;
+	private bool won = false;
 
 	void Start () {
 		bool izok = false;
@@ -58,8 +60,22 @@ public class rotation_hard : MonoBehaviour {
 			}
 		}
 
-		if (pos_won && angle_won) {
+		if (pos_won && angle_won && !won) {
 			//Win
+			won = true;
+			Invoke ("GoToMove", 4);
+			if (PlayerPrefs.GetInt ("Classic") == 0)
+			{
+				PlayerPrefs.SetInt ("lvl_" + SceneManager.GetActiveScene ().name, 2);
+				if (PlayerPrefs.GetInt ("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1)) != 2)
+					PlayerPrefs.SetInt ("lvl_" + System.Convert.ToString (System.Convert.ToInt32 (SceneManager.GetActiveScene ().name) + 1), 1);
+				PlayerPrefs.Save ();
+			}
 		}
+	}
+
+	void GoToMove()
+	{
+		SceneManager.LoadScene ("Level_Select");
 	}
 }

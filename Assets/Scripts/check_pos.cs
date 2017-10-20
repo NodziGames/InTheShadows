@@ -8,10 +8,13 @@ public class check_pos : MonoBehaviour {
 	public GameObject obj_1;
 	public GameObject obj_2;
 
+	private AudioSource audio;
+	private bool won = false;
+
 	public float leniency;
 
 	void Start () {
-		
+		audio = GetComponent<AudioSource> ();
 	}
 	
 	// Update is called once per frame
@@ -21,9 +24,11 @@ public class check_pos : MonoBehaviour {
 
 		float distance = Mathf.Abs (pos2 - pos1);
 
-		if (distance <= leniency && obj_1.GetComponent<rotation_hard>().angle_won && obj_2.GetComponent<rotation_hard>().angle_won) {
+		if (distance <= leniency && obj_1.GetComponent<rotation_hard>().angle_won && obj_2.GetComponent<rotation_hard>().angle_won && !won) {
 			obj_1.GetComponent<rotation_hard> ().pos_won = true;
 			obj_2.GetComponent<rotation_hard> ().pos_won = true;
+			won = true;
+			audio.Play ();
 		}
 	}
 }

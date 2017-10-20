@@ -46,11 +46,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\LoadManager.cs" />
+     <Compile Include="Assets\Scripts\button_mute.cs" />
+     <Compile Include="Assets\Scripts\button_notext.cs" />
+     <Compile Include="Assets\Scripts\button_reset.cs" />
      <Compile Include="Assets\Scripts\buttons.cs" />
-     <Compile Include="Assets\Scripts\buttons_level.cs" />
+     <Compile Include="Assets\Scripts\camera.cs" />
      <Compile Include="Assets\Scripts\check_pos.cs" />
      <Compile Include="Assets\Scripts\flicker.cs" />
+     <Compile Include="Assets\Scripts\gay.cs" />
+     <Compile Include="Assets\Scripts\level_select.cs" />
      <Compile Include="Assets\Scripts\rotation_easy.cs" />
      <Compile Include="Assets\Scripts\rotation_hard.cs" />
      <Compile Include="Assets\Scripts\rotation_medium.cs" />
